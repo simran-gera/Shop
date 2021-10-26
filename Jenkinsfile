@@ -2,7 +2,7 @@ pipeline {
     agent any
     triggers {
         pollSCM('* * * * *') //runs this pipeline on every commit
-        cron('25 14 * * *') //run at 23:30:00 
+        cron('25 14 * * *') 
     }
     stages {
     stage("Compile") {
@@ -19,7 +19,7 @@ pipeline {
        when {
            //runs only when the expression evaluates to true
            expression {
-               //will return true when the build runs via cron trigger (also when there is a commit at night between 23:00 and 23:59)
+               //will return true when the build runs via cron trigger 
                    return Calendar.instance.get(Calendar.HOUR_OF_DAY) in 23
                }
             }

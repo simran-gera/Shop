@@ -28,5 +28,5 @@ pipeline {
                 echo "Running the nightly stage only at night..."
             }
         }
-    }
+     }
    }
